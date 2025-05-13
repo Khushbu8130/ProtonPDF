@@ -1,7 +1,7 @@
 import ForgetPassword from "../components/auth/ForgetPassword";
 
 const apis = ()=> {
-    const local = 'https://protonpdf-1.onrender.com';
+    const local = 'https://protonpdf-1.onrender.com/';
 
     const list = {
         registerUser:`${local}user/register`,
