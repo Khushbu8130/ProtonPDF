@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaFileAlt } from "react-icons/fa";
+import config from "../../config";
 
 function Home() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -34,7 +35,7 @@ function Home() {
       formData.append("File", selectedFile);
 
       const response = await fetch(
-        "https://v2.convertapi.com/convert/pdf/to/xlsx?auth=secret_UEV86zGLRq6eufAd",
+        `${config.BASE_URL}/pdf/to/xlsx?auth=${config.API_KEY}`,
         {
           method: "POST",
           body: formData,

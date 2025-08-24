@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { FaFilePdf } from "react-icons/fa";
+import config from "../../config";
 
 const Home = () => {
   const [file, setFile] = useState(null);
@@ -48,7 +49,7 @@ const Home = () => {
 
       try {
         const response = await axios.post(
-          "https://v2.convertapi.com/convert/pdf/to/compress?auth=secret_UEV86zGLRq6eufAd",
+          `${config.BASE_URL}/convert/pdf/to/compress?auth=${config.API_KEY}`,
           {
             Parameters: [
               {

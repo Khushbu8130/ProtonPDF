@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaFilePdf } from "react-icons/fa";
+import config from "../../config";
 
 const Home = () => {
   const [pdfFile, setPdfFile] = useState(null);
@@ -28,7 +29,7 @@ const Home = () => {
 
     try {
       const response = await fetch(
-        'https://v2.convertapi.com/convert/pdf/to/docx?Secret=secret_UEV86zGLRq6eufAd',
+        `${config.BASE_URL}/convert/pdf/to/docx?Secret=${config.API_KEY}`,
         {
           method: 'POST',
           body: formData,

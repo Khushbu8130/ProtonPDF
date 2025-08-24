@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { FaFileWord } from "react-icons/fa";
-
+import config from "../../config";
 const Home = () => {
   const [loading, setLoading] = useState(false);
   const [file, setFile] = useState(null);
@@ -37,7 +37,7 @@ const Home = () => {
 
     try {
       const response = await axios.post(
-        "https://v2.convertapi.com/convert/docx/to/pdf?Secret=secret_UEV86zGLRq6eufAd",
+        `${config.BASE_URL}/convert/docx/to/pdf?Secret=${config.API_KEY}`,
         formData,
         {
           headers: {

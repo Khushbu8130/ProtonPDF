@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaFilePdf } from "react-icons/fa";
+import config from "../../config";
 
 const PdfToPptxConverter = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -28,7 +29,7 @@ const PdfToPptxConverter = () => {
       formData.append('File', selectedFile);
 
       const response = await fetch(
-        'https://v2.convertapi.com/convert/pdf/to/pptx?auth=secret_UEV86zGLRq6eufAd',
+        `${config.BASE_URL}/convert/pdf/to/pptx?auth=${config.API_KEY}`,
         {
           method: 'POST',
           body: formData

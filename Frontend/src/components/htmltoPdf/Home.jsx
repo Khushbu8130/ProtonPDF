@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaHtml5, FaDownload } from "react-icons/fa";
+import config from "../../config";
 
 const Home = () => {
   const [htmlFile, setHtmlFile] = useState(null);
@@ -35,7 +36,7 @@ const Home = () => {
       formData.append("File", htmlFile);
 
       const response = await fetch(
-        "https://v2.convertapi.com/convert/html/to/pdf?Secret=secret_UEV86zGLRq6eufAd",
+        `${config.BASE_URL}/convert/html/to/pdf?Secret=${config.API_KEY}`,
         {
           method: "POST",
           body: formData,

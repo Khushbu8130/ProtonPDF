@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaFilePowerpoint, FaDownload } from "react-icons/fa";
+import config from "../../config";
 
 const Home = () => {
   const [pptFile, setPptFile] = useState(null);
@@ -35,7 +36,7 @@ const Home = () => {
       formData.append("file", pptFile);
 
       const response = await fetch(
-        "https://v2.convertapi.com/convert/pptx/to/pdf?Secret=secret_UEV86zGLRq6eufAd",
+        `${config.BASE_URL}/convert/pptx/to/pdf?Secret=${config.API_KEY}`,
         {
           method: "POST",
           body: formData,
