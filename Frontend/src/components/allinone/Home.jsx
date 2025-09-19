@@ -29,7 +29,7 @@ const compressTools = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
+    <div className="min-h-screen bg-gray-50 p-6" style={{ backgroundColor: 'aliceblue' }}>
       <header className="text-center mb-10">
         <h1 className="text-3xl md:text-5xl font-bold mb-2">
         All-in-one file toolkit for your everyday needs
